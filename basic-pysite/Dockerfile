@@ -1,7 +1,10 @@
 FROM alpine:3.15 as base
+
 RUN apk add --nocache --update python3 py3-pip
 
-FROM base as pybuilder
+
+FROM base
+
 RUN pip3 install flask
 
 WORKDIR /tinyapp
