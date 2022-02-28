@@ -1,0 +1,28 @@
+version: '3'
+
+networks:
+  default:
+    driver: bridge
+
+services:
+  web:
+    container_name: web
+    image: nginx
+    ports:
+      - "8080:80"
+    volumes:
+      - ./web/www:/var/www/html
+      - ./web/sites:/etc/nginx/conf.d
+
+  php:
+    container_name: php
+    build:
+      context: ./php
+    volumes:
+      - ./web/www:/var/www/html
+
+  mariadb:
+    container_name: mariadb
+    image: mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: root

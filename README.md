@@ -19,4 +19,4 @@ Sources
 ### Python
 
 
-  * Only Python: https://dev.to/souravatta/writing-a-dockerfile-for-flask-app-2g1n
+  * Flask server: https://dev.to/souravatta/writing-a-dockerfile-for-flask-app-2g1n
